@@ -117,7 +117,7 @@ class _ProgressButtonState extends State<ProgressButton>
           style:ButtonStyle(
             padding:MaterialStateProperty.all(padding),
             shape:MaterialStateProperty.all(shape),
-            backgroundColor:MaterialStateProperty.all(shape),
+            backgroundColor:MaterialStateProperty.all(color),
           ),
           child: _buildChildren(context),
           onPressed: _onButtonPressed(),
