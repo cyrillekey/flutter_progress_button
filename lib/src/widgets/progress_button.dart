@@ -114,8 +114,8 @@ class _ProgressButtonState extends State<ProgressButton>
         );
       case ProgressButtonType.Outline:
         return OutlinedButton(
-          padding: padding,
           style:ButtonStyle(
+            padding:MaterialStateProperty.all(padding),
             shape:MaterialStateProperty.all(shape),
             backgroundColor:MaterialStateProperty.all(shape),
           ),
