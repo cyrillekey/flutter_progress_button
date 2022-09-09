@@ -97,27 +97,29 @@ class _ProgressButtonState extends State<ProgressButton>
 
     switch (widget.type) {
       case ProgressButtonType.Raised:
-        return RaisedButton(
-          padding: padding,
-          color: color,
-          shape: shape,
+        return ElevatedButton(
+          style: ButtonStyle(
+              padding: MaterialStateProperty.all<EdgeInsetsGeometry>(padding),
+              backgroundColor: MaterialStateProperty.all<Color>(color),
+              shape: MaterialStateProperty.all<OutlinedBorder>(shape)),
           child: _buildChildren(context),
           onPressed: _onButtonPressed(),
         );
       case ProgressButtonType.Flat:
-        return FlatButton(
-          padding: padding,
-          color: color,
-          shape: shape,
+        return TextButton(
+          style: ButtonStyle(
+              padding: MaterialStateProperty.all<EdgeInsetsGeometry>(padding),
+              backgroundColor: MaterialStateProperty.all<Color>(color),
+              shape: MaterialStateProperty.all<OutlinedBorder>(shape)),
           child: _buildChildren(context),
           onPressed: _onButtonPressed(),
         );
       case ProgressButtonType.Outline:
         return OutlinedButton(
-          style:ButtonStyle(
-            padding:MaterialStateProperty.all(padding),
-            shape:MaterialStateProperty.all(shape),
-            backgroundColor:MaterialStateProperty.all(color),
+          style: ButtonStyle(
+            padding: MaterialStateProperty.all(padding),
+            shape: MaterialStateProperty.all(shape),
+            backgroundColor: MaterialStateProperty.all(color),
           ),
           child: _buildChildren(context),
           onPressed: _onButtonPressed(),
